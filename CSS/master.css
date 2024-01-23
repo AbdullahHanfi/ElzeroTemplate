@@ -954,6 +954,7 @@ articles end
 }
 /* skills end */
 /* work start */
+
 .work-steps .container {
   display: flex;
   align-items: center;
@@ -1031,5 +1032,222 @@ articles end
   .work-steps .content .box {
     text-align: center;
   }
+  .work-steps .special-header::before {
+    left: -25px;
+  }
+  .work-steps .special-header::after {
+    right: -25px;
+  }
 }
 /* work end */
+/* events start  */
+/* events end  */
+
+/* pricing start  */
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+@media (max-width: 577px) {
+  .pricing .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+.pricing .box {
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 25%) 0px 2px 15px;
+  position: relative;
+  z-index: 1;
+}
+.pricing .box::before,
+.pricing .box::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: calc(50% + 0.5px);
+  background-color: #f6f6f6;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.pricing .box::before {
+  top: 0;
+  left: 0;
+}
+.pricing .box::after {
+  bottom: 0;
+  right: 0;
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+  width: 100%;
+}
+.pricing .popular {
+  transform: translatey(-20px);
+}
+@media (max-width: 993px) {
+  .pricing .popular {
+    transform: translatey(0px);
+  }
+}
+.pricing .popular .label {
+  position: absolute;
+  background-color: var(--blue);
+  transform: rotate(90deg);
+  top: 56px;
+  right: -30px;
+  padding: 5px 28px 5px 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.pricing .popular .label:after {
+  content: "";
+  position: absolute;
+  border: 16.5px solid transparent;
+  border-right-color: white;
+  top: -1px;
+  right: -0.5px;
+}
+.pricing .box .title {
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 0;
+  font-size: 25px;
+  letter-spacing: -1px;
+}
+
+.pricing .box img {
+  width: 80px;
+  display: block;
+  margin: 0px auto 30px;
+}
+.pricing .box .price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pricing .box .price .cost {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--blue);
+}
+.pricing .box .price .time {
+  color: #777;
+}
+.pricing .box ul li {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+.pricing .box ul li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+  font-weight: 900;
+  color: var(--blue);
+}
+.pricing .box a {
+  display: block;
+  width: fit-content;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  margin: 30px auto 40px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.pricing .box a:hover {
+  color: white;
+  background-color: var(--blue);
+}
+/* pricing end  */
+
+/* videos start  */
+/* videos end  */
+
+/* state start  */
+.stats {
+  position: relative;
+  background-image: url(../Images/stats.jpg);
+  background-size: cover;
+  min-height: 300px;
+}
+.stats::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 95%);
+}
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.stats h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 0 0 50px;
+  position: relative;
+}
+.stats .box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  padding: 20px 0px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+.stats .box::before,
+.stats .box::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: var(--blue);
+  transition: all 1s;
+  z-index: 1;
+}
+.stats .box::before {
+  left: 0;
+  bottom: 0;
+}
+.stats .box::after {
+  top: 0;
+  right: 0;
+}
+.stats .box:hover::before,
+.stats .box:hover::after {
+  height: 100%;
+}
+
+.stats .box > * {
+  margin-bottom: 15px;
+}
+.stats .box i {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+.stats .box .number {
+  display: block;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.stats .box .text {
+  color: var(--blue);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* state end  */
