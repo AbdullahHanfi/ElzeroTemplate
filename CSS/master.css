@@ -1251,3 +1251,122 @@ articles end
 }
 
 /* state end  */
+/* discount start */
+.discount {
+  display: flex;
+}
+@media (max-width: 993px) {
+  .discount {
+    flex-direction: column;
+  }
+}
+
+.discount .content {
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 0px;
+  flex-basis: 50%;
+}
+.discount .content::before {
+  content: "";
+  background-image: url(../Images/discount-background1.jpg);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+  z-index: -5;
+  opacity: 0.3;
+  animation: change-background 2s linear 0s infinite;
+}
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url("../Images/discount-background1.jpg");
+  }
+  50% {
+    background-image: url("../Images/discount-background2.jpg");
+  }
+}
+.discount .content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -2;
+  background-color: rgb(23 135 224);
+  opacity: 0.9;
+}
+.discount .content h2 {
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+.discount .content p {
+  line-height: 1.6;
+  font-size: 18px;
+  max-width: 500px;
+}
+.discount .content img {
+  width: 300px;
+}
+.discount .form {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.discount .form h2 {
+  margin-top: 50px;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+.discount .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.discount .form form > * {
+  margin-top: 25px;
+  caret-color: var(--blue);
+  resize: none;
+}
+.discount .form form > *:focus {
+  outline: 0;
+}
+.discount .form form .input {
+  border: 0px;
+  border-bottom: 1px solid #80808039;
+  padding: 15px;
+  width: 300px;
+  display: block;
+  background-color: #eeeeee79;
+}
+@media (max-width: 577px) {
+  .discount .form form .input {
+    width: 250px;
+  }
+}
+.discount .form form textarea.input {
+  height: 120px;
+}
+.discount .form form textarea.input + input {
+  padding: 15px 0px;
+  width: 100%;
+  color: white;
+  background: var(--blue);
+  border: none;
+  transition: all 0.3s;
+}
+.discount .form form textarea.input + input:hover {
+  background-color: var(--sec-blue);
+}
+/* discount end  */
