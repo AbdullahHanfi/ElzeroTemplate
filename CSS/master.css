@@ -1060,6 +1060,7 @@ articles end
 .events .container .time {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .events .container .time > .unit {
   display: flex;
@@ -1094,17 +1095,27 @@ articles end
   font-size: 19px;
   color: #777;
 }
+.events .container h2 {
+  font-size: 30px;
+}
 .events .container .subscribe {
   margin: 30px auto 20px;
   background-color: #f6f5f5;
   padding: 25px 45px;
   border-radius: 40px;
 }
+.events .container .subscribe > * {
+  display: flex;
+}
 .events .container .subscribe input:first-of-type {
   border: 0px;
   width: 300px;
   padding: 15px 20px;
   border-radius: 30px;
+}
+.events .container .subscribe input:focus-visible:first-of-type {
+  outline: 0px;
+  border-width: 0px;
 }
 .events .container .subscribe input:last-of-type {
   margin-left: 20px;
@@ -1113,6 +1124,31 @@ articles end
   color: white;
   padding: 12px 15px;
   border-radius: 20px;
+  font-weight: 700;
+}
+@media (max-width: 577px) {
+  .events .container .subscribe > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .events .container .subscribe {
+    padding: 25px 20px;
+  }
+  .events .container .subscribe input:last-of-type {
+    margin-top: 10px;
+  }
+  .events .container .subscribe input:first-of-type {
+    width: 250px;
+  }
+}
+@media (max-width: 993px) {
+  .events .container img {
+    display: none;
+  }
+  .events .container .info {
+    width: auto;
+  }
 }
 /* events end  */
 
